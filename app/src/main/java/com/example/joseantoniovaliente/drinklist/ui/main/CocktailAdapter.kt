@@ -7,7 +7,7 @@ import com.example.joseantoniovaliente.drinklist.R
 import com.example.joseantoniovaliente.drinklist.databinding.ViewCocktailBinding
 import com.example.joseantoniovaliente.drinklist.inflate
 import com.example.joseantoniovaliente.drinklist.loadUrl
-import com.example.joseantoniovaliente.drinklist.model.server.Drink
+import com.example.joseantoniovaliente.drinklist.model.Drink
 
 class CocktailAdapter(var drinkList : List<Drink>, val listener: (Drink) -> Unit):
     RecyclerView.Adapter<CocktailAdapter.ViewHolder>() {

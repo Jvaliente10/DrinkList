@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.joseantoniovaliente.drinklist.DetailFragment"
+        android:name="com.example.joseantoniovaliente.drinklist.ui.detail.DetailFragment"
         android:label="CocktailDetalles"
         tools:layout="@layout/fragment_detail2" />
 </navigation>
