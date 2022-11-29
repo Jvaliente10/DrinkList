@@ -21,19 +21,20 @@ class DetailFragment() : Fragment(R.layout.fragment_detail) {
 
     val drinkDetail = arguments?.getParcelable<DrinkDetails>(EXTRA_DRINK)
 
+    val idDrink = drinkDetail?.idDrink
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentDetailBinding.bind(view)
 
+        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Default) {
 
-        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main) {
-           val response = drinkDetail?.let { RemoteConnection.service.getDetails(it.idDrink) }
-            response
-
+            if (idDrink != null) {
+                val listaDetalles= RemoteConnection.service.getDetails(idDrink)
+                val detallesId=listaDetalles.drinks
+                binding.textView.text=detallesId[0].strDrink
+            }
         }
-
-
-
     }
 
 
