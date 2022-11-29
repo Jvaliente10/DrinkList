@@ -12,6 +12,6 @@ interface CocktailDbService {
     @GET("filter.php?a=Alcoholic")
     suspend fun drinkList(): DrinkList
 
-    @GET("lookup.php?")
-    suspend fun getDetails(@Path("i")idDrink:String):DetailsList
+    @GET("lookup.php")
+    suspend fun getCocktailById(@Query("i") searchQuery: String?): DetailsList
 }
