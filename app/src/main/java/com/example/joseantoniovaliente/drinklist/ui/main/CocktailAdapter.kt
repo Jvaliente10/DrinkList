@@ -29,8 +29,8 @@ class CocktailAdapter(var drinkList : List<Drink>, val listener: (Drink) -> Unit
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         private val binding = ViewCocktailBinding.bind(view)
         fun bind(drink: Drink){
-            binding.title.text = drink.strDrink
-            binding.imagen.loadUrl(drink.strDrinkThumb)
+            binding.tvCocktailName.text = drink.strDrink
+            binding.ivFlag.loadUrl(drink.strDrinkThumb)
         }
     }
 }
